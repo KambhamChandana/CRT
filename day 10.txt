@@ -1,0 +1,722 @@
+BST SEARCH AN ELEMENT
+
+def binary_search(arr,target):
+    # calculate start,end mid a values:
+    start=0
+    end = len(arr) -1
+    mid = (start + end) //2
+    while(start<=end):
+        if(arr[mid]==target):
+            return mid
+        elif(target>arr[mid]):
+            start = mid + 1
+        else:
+            end = mid - 1
+        mid = (start + end) //2
+    return -1 #if not found return -1
+arr=[4,5,6,7,8,9,10,11,12]
+target=7
+result=binary_search(arr,target)
+print(result)
+    
+
+3
+
+=== Code Execution Successful ===
+
+MERGE SORT
+
+def merge_sort(arr, start=0, end=None):
+    if end is None:
+        end = len(arr) - 1
+    if start < end:
+        mid = (start + end) // 2
+        # Recursively sort the first half
+        merge_sort(arr, start, mid)
+        # Recursively sort the second half
+        merge_sort(arr, mid + 1)
+        # Merge the sorted halves
+        merge(arr, start, mid, end)
+
+def merge(arr, start, mid, end):
+    left = arr[start:mid + 1]
+    right = arr[mid + 1:end + 1]
+    i = j = 0
+    k = start
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            arr[k] = left[i]
+            i += 1
+        else:
+            arr[k] = right[j]
+            j += 1
+        k += 1
+    while i < len(left):
+        arr[k] = left[i]
+        i += 1
+        k += 1
+    while j < len(right):
+        arr[k] = right[j]
+        j += 1
+        k += 1
+
+arr = [30, 12, 4, 49, 45]
+merge_sort(arr)
+print(arr)
+
+
+[4, 12, 30, 45, 49]
+
+=== Code Execution Successful ===
+        
+    
+  QUICK SORT:      
+
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    left=[]
+    right=[]
+    equal=[]
+    pvt=arr[-1]
+    for i in arr:
+        if(i<pvt):
+            left.append(i)
+        elif(i>pvt):
+            right.append(i)
+        else:
+            equal.append(i)
+    print("pivot:", pvt)
+    print("left sub array",left)
+    print("right sub array",right)
+    print("equal array",equal)
+    return quick_sort(left)+equal+quick_sort(right)
+arr=[23,63,44,57,12,45,36]
+sorted_arr = quick_sort(arr)
+print(sorted_arr)
+            
+
+
+pivot: 36
+left sub array [23, 12]
+right sub array [63, 44, 57, 45]
+equal array [36]
+pivot: 12
+left sub array []
+right sub array [23]
+equal array [12]
+pivot: 45
+left sub array [44]
+right sub array [63, 57]
+equal array [45]
+pivot: 57
+left sub array []
+right sub array [63]
+equal array [57]
+[12, 23, 36, 44, 45, 57, 63]
+
+=== Code Execution Successful ===
+
+ARRAY LEADERS:
+class Solution:
+    def leaders(self, arr):
+        # code here
+        previous = 0
+        leader = []
+        for index in range(len(arr) - 1, -1, -1):
+            item = arr[index]
+            if item >= previous:
+                leader.append(item)
+                previous = item
+        leader = leader[::-1]
+        return leader
+ 
+Input: 
+arr[] =
+16 17 4 3 5 2
+Your Output:
+17 5 2
+Expected Output:
+17 5 2
+
+
+INDEX AN EXTRA ELEMENT:
+
+class Solution:
+    def findExtra(self,a,b):
+        #add code here
+        for i in a:
+            if i not in b:
+                return a.index
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+  public:
+    int findExtra(int n, int arr1[], int arr2[]) {
+        for(int i = 0; i < n; i++) {
+            if(arr1[i] != arr2[i]) return i;
+        }
+        return -1; // dummy return value
+    }
+};
+  This is very basic linear traversal.
+
+ 
+
+Time Complexity: O(n)
+
+Space Complexit0(1)
+
+ 
+
+class Solution {
+  public:
+    int findExtra(int n, int arr1[], int arr2[]) {
+        
+        int index = n - 1;
+        int start = 0, end = n - 2;
+        
+        while (start <= end) {
+            int mid = (end - start) / 2 + start;
+            if (arr2[mid] == arr1[mid])
+                start = mid + 1;
+            else {
+                index = mid;
+                end = mid - 1;
+            }
+        }
+
+        return index;
+    }
+};
+Let's get a snapshot of dry run
+
+
+
+Why index = n - 1 ?Consider a case where we have n = 2, and second element is the extra number. But, as per our code start = 0 and end = n - 2 = 0. Therefore, we won't be able to get to the second element.
+Why end = n - 2 ? Since we are applying the Binary search on the arr2 which has one less element that arr1 and therefore end = n - 2;
+Also we could, just return the start as our answer and it will also handle the index = n - 1 case, since start will always get increamented if it had the same (The code for the same is given below)
+class Solution {
+  public:
+    int findExtra(int n, int arr1[], int arr2[]) {
+        int start = 0, end = n - 1;
+        
+        while (start <= end) {
+            int mid = (end - start) / 2 + start;
+            if (arr2[mid] == arr1[mid])
+                start = mid + 1;
+            else {
+                end = mid - 1;
+            }
+        }
+
+        return start;
+    }
+};
+ 
+
+Time Complexity: O(logn)
+
+Space Complexity: O(1)
+
+..... see more
+
+13
+
+Reply
+(Show 2 Replies)
+User
+GeeksforGeeksverified
+(Edited)
+11 months agoJun 08, 2024 10:50 (GMT +5:30)
+
+Congrats @arnabku39i7 !!
+
+Comment of the day (07/06/2024) :-
+https://discuss.geeksforgeeks.org/comment/e99008e1-978a-4f93-92a4-cc721bd27891/practice
+
+Problem Link :- https://www.geeksforgeeks.org/problems/maximum-occured-integer4602/1
+
+
+
+Keep Coding!!
+
+Reagrds
+Practice Team
+GeeksforGeeks
+
+..... see more
+
+6
+
+Reply
+User
+GeeksforGeeksverified
+11 months agoJun 08, 2024 09:00 (GMT +5:30)
+
+"Daily GFG T-Shirts Up for Grabs! Be the Comment of the Day"
+
+Hi Geeks,
+
+Guideline for everyone to follow for "Comment Of the Day" :-
+
+It will be purely selected by the best explanation and visualization of the problem and approaches.
+
+*One can use Pictures, GIFs, Slideshow or Video for better clarity.*
+
+We are using a strong plagiarism check on comments.
+Upvotes, downvotes, or multiple comments on a thread will not be justified for the Comment of the Day.
+Abusing and allegations against others for downvotes or other scenarios, Will not be considered.
+Copy-pasting someone's comment or adding the same comment multiple times, will not be considered and leads you into spam/blocked.
+Post your submission in a new thread and for any suggestions or feedback, leave a comment below.
+Be the 'Comment of the Day' and win a GFG T-shirt daily! Our Marketing Team will contact the winner via email. Check your inbox!
+
+Keep Coding!!
+
+Regards
+Practice Team
+
+GeeksforGeeks
+
+..... see more
+
+9
+
+Reply
+User
+MEET RAVAL
+4 weeks agoApr 28, 2025 00:36 (GMT +5:30)
+
+c++ solution:
+
+ 
+
+
+class Solution {
+  public:
+    int findExtra(vector<int>& a, vector<int>& b) {
+        // add code here.
+        int i = 0;
+        int n = 0;
+        
+        if(a.size() > b.size()){
+            n = a.size();
+        }
+        else{
+            n = b.size();
+        }
+        
+        while(i<n){
+            
+            if(a[i] != b[i]){
+                return i;
+            }
+            
+            i++;
+            
+        }
+        
+        if( i == n - 1 ){
+            return i+1;
+        }
+        
+        return -1;
+        
+    }
+};
+
+..... see more
+
+0
+
+Reply
+User
+Babisha
+4 weeks agoApr 27, 2025 22:30 (GMT +5:30)
+
+JAVA SOLUTION: 
+
+class Solution {
+    public int findExtra(int a[], int b[]) {
+      
+        int i=0,j=0;
+     while(i<a.length && j<b.length)  {
+                if(a[i]!=b[j])
+                  return i;
+                  
+                  i++;
+                  j++;
+            }
+        
+        return a.length-1;
+    }
+}
+
+..... see more
+
+0
+
+Reply
+User
+Sumit Kumar
+4 weeks agoApr 27, 2025 14:46 (GMT +5:30)
+
+ int findExtra(vector<int>& a, vector<int>& b) {
+        // add code here.
+        int i,j=0;
+       for(int i=0;i<a.size();i++){
+           if(a[i]!=b[i]) return i;
+       }
+        
+        
+    }
+
+..... see more
+
+0
+
+Reply
+User
+Jatin Kumar
+1 month agoApr 07, 2025 00:42 (GMT +5:30)
+
+ int findExtra(vector<int>& a, vector<int>& b) {
+        
+        int n = a.size();
+        int m = b.size();
+        int i = 0;
+        int j = 0;
+        
+        while(i < n && j < m){
+            if(a[i] != b[j]){
+                return i;
+            }
+            i++;
+            j++;
+        }
+        return (i != n) ? n-1 : m-1;
+
+ 
+
+..... see more
+
+0
+
+Reply
+User
+R.B. Subarshan
+1 month agoApr 06, 2025 09:10 (GMT +5:30)
+
+java beginner level solution .
+easy to understand
+class Solution {
+    public int findExtra(int a[], int b[]) {
+      int n=a.length-1;
+      int m=b.length-1;
+      int result=0;
+      for(int i=0;i<=n;i++){
+          for(int j=
+
+0
+
+Reply
+User
+Prity Kumari
+2 months agoMar 19, 2025 17:34 (GMT +5:30)
+
+class Solution {
+    
+    
+  public static int findIndex(int a[], int t)
+    {
+        if (a == null)
+            return -1;
+
+        int len = a.length;
+        int i = 0;
+
+        // traverse in the array
+        while (i < len) {
+
+            // if the i-th element is t
+            // then return the index
+            if (a[i] == t) {
+                return i;
+            }
+        
+        
+        
+ 
+
+class Solution {
+public:
+    int findExtra(vector<int>& a, vector<int>& b) {
+        // Sort both arrays
+
+
+        sort(a.begin(), a.end());
+        sort(b.begin(), b.end());
+        
+        // Compare elements
+
+
+        for(int i = 0; i < b.size(); i++) {
+            if(a[i] != b[i]) {
+                return i;
+            }
+        }
+        // If no difference found, extra element is at the end
+
+
+        return a.size() - 1;
+    }
+};
+
+..... see more
+
+0
+
+Reply
+User
+Poorani S D
+3 months agoFeb 21, 2025 21:12 (GMT +5:30)
+
+PYTHON
+
+def findExtra(self,a,b):
+        minimum_length=min(len(a), len(b))
+        for i in range(0, minimum_length):
+            if a[i]!=b[i]:
+                return i
+        return minimum_length
+
+
+0
+
+Reply
+User
+Rakshitha Akkireddy
+3 months agoFeb 21, 2025 12:35 (GMT +5:30)
+
+def findExtra(self,a,b):
+        #add code here
+        for i in a:
+            if i not in b:
+                return a.index(i)
+
+
+0
+
+Reply
+User
+Chinmay panghri
+3 months agoFeb 20, 2025 22:13 (GMT +5:30)
+
+class Solution {
+    public int findExtra(int a[], int b[]) {
+        int sum1 = 0, sum2 = 0;
+        for(int num: a) sum1 += num;
+        for(int num: b) sum2 += num;
+        int low = 0, high = a.length -1, mid;
+        while(low<=high) {
+            mid = (low+high)/2;
+            if(a[mid]==sum1-sum2) return mid;
+            if(a[mid]<sum1-sum2) low = mid+1;
+            if(a[mid]>sum1-sum2) high = mid-1;
+        }
+        return -1;
+ 
+
+class Solution {
+    public int findExtra(int a[], int b[]) {
+        // add code here.
+        for(int i = 0; i<a.length-1; i++){
+            if(a[i] != b[i]){
+                return i;
+            }
+        }
+        return a.length-1;
+    }
+}
+
+..... see more
+
+0
+
+Reply
+User
+Irshad Shaik
+3 months agoFeb 05, 2025 23:47 (GMT +5:30)
+
+class Solution {
+    public int findExtra(int a[], int b[]) {
+        // add code here.
+        int i=0,j=0;
+        while(i<a.length && j<b.length)
+        {
+            if(a[i] == b[j])
+            {
+                i++;
+                j++;
+            }
+            else
+            {
+                return i;
+            }
+        }
+        return i;
+    }
+}
+
+..... see more
+
+0
+
+Reply
+User
+Nirmal Raj
+3 months agoJan 29, 2025 20:57 (GMT +5:30)
+
+Python easy solution 
+
+def findExtra(self,a,b):
+
+        while len(a)!=len(b):
+
+            b.append(-11)
+
+        for i in range(len(b)):
+
+            if a[i]!=b[i]:
+
+                return(i)
+
+                break
+
+..... see more
+
+1
+
+Reply
+User
+Sanjana
+3 months agoJan 28, 2025 13:25 (GMT +5:30)
+
+ public int findExtra(int a[], int b[]) {
+        // add code here.
+        int n=a.length;
+        int m=b.length;
+        ArrayList<Integer> arr= new ArrayList<>();
+        for(int i=0;i<m;i++){
+            arr.add(b[i]);
+        }
+        for(int i=0;i<n;i++){
+            if(!arr.contains(a[i])){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+..... see more
+
+0
+
+Reply
+User
+Mrutunjaya Thakur
+4 months agoJan 25, 2025 23:07 (GMT +5:30)
+
+Python code : 
+
+def findExtra(self,a,b):
+        #add code here
+        if len(a) == len(b):
+            return a.index(a[-1])
+        elif len(a) < len(b):
+            return 0
+        else:
+            for i in a:
+                if i not in b :
+                    return a.index(i)
+         
+
+..... see more
+
+1
+
+
+Output Window
+Compilation Completed
+Input: 
+a[] =
+2 4 6 8 9 10 12
+b[] =
+2 4 6 8 10 12
+Your Output:
+4
+Expected Output:
+4
+Python3
+
+
+
+        
+        
+
+
+
+Custom Input
+
+        
+        
+
+    
+
+
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
+arr=[8,3,14,9]
+sorted_arr= insertion_sort(arr)
+print(sorted_arr)
+
+[3, 8, 9, 14]
+
+=== Code Execution Successful ===
+
+BUBBLE SORT
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+arr=[3,4,6,8,12]
+sorted_arr = bubble_sort(arr)
+print(sorted_arr)
+
+[3, 4, 6, 8, 12]
+
+=== Code Execution Successful ===
