@@ -1,0 +1,708 @@
+
+binary tree:
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+        if root is None:
+            return Node(data)
+        if data<root.data:
+           root.left=self.insert(data,root.left)
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+     if root :
+        self.inorder_traversal(root.left)
+        print(root.data, end=" ")
+        self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+          print(root.data, end=" ")
+          self.preorder_traversal(root.left)
+          self.preorder_traversal(root.right)
+
+    def postorder_traversal(self,root):
+        if root:
+           self.postorder_traversal(root.left)
+           self.postorder_traversal(root.right)
+           print(root.data, end=" ")
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20,root)
+root=bst_tree.insert(10,root) 
+root=bst_tree.insert(900,root)
+bst_tree.inorder_traversal(root)
+bst_tree.preorder_traversal(root)
+bst_tree.postorder_traversal(root)
+
+output:
+10 20 900 20 10 900 10 900 20 
+
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+        if root is None:
+            return Node(data)
+        if data<root.data:
+           root.left=self.insert(data,root.left)
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+     if root :
+        self.inorder_traversal(root.left)
+        print(root.data, end=" ")
+        self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+          print(root.data, end=" ")
+          self.preorder_traversal(root.left)
+          self.preorder_traversal(root.right)
+
+    def postorder_traversal(self,root):
+        if root:
+           self.postorder_traversal(root.left)
+           self.postorder_traversal(root.right)
+           print(root.data, end=" ")
+    def search_in_bst(self,root,key):
+        if(root.data==key):
+            return True
+        if (root is None):
+            return False
+        if(key<root.data):
+           return self.search_in_bst(root.left,key)
+        elif(key>root.data):
+            return self.search_in_bst(root.right,key)
+        else:
+            return True
+            
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20,root)
+root=bst_tree.insert(10,root) 
+root=bst_tree.insert(900,root)
+print("\ninorder_travesal:")
+bst_tree.inorder_traversal(root)
+print("\npreorder_travesal:")
+bst_tree.preorder_traversal(root)
+print("\npostorder_travesal:")
+bst_tree.postorder_traversal(root)
+
+
+OUTPUT:
+inorder_travesal:
+10 20 900 
+preorder_travesal:
+20 10 900 
+postorder_travesal:
+10 900 20 
+=== Code Execution Successful ===
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+        if root is None:
+            return Node(data)
+        if data<root.data:
+           root.left=self.insert(data,root.left)
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+     if root :
+        self.inorder_traversal(root.left)
+        print(root.data, end=" ")
+        self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+          print(root.data, end=" ")
+          self.preorder_traversal(root.left)
+          self.preorder_traversal(root.right)
+
+    def postorder_traversal(self,root):
+        if root:
+           self.postorder_traversal(root.left)
+           self.postorder_traversal(root.right)
+           print(root.data, end=" ")
+    def search_in_bst(self,root,key):
+        if(root.data==key):
+            return True
+        if (root is None):
+            return False
+        if(key<root.data):
+           return self.search_in_bst(root.left,key)
+        elif(key>root.data):
+            return self.search_in_bst(root.right,key)
+        else:
+            return True
+            
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20,root)
+root=bst_tree.insert(10,root) 
+root=bst_tree.insert(900,root)
+print("\ninorder_travesal:")
+bst_tree.inorder_traversal(root)
+print("\npreorder_travesal:")
+bst_tree.preorder_traversal(root)
+print("\npostorder_travesal:")
+bst_tree.postorder_traversal(root)
+print("\n")
+print(bst_tree.search_in_bst(root,10))
+
+
+
+
+inorder_travesal:
+10 20 900 
+preorder_travesal:
+20 10 900 
+postorder_travesal:
+10 900 20 
+
+True
+
+=== Code Execution Successful ===
+
+HEIGHT:
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+        if root is None:
+            return Node(data)
+        if data<root.data:
+           root.left=self.insert(data,root.left)
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+     if root :
+        self.inorder_traversal(root.left)
+        print(root.data, end=" ")
+        self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+          print(root.data, end=" ")
+          self.preorder_traversal(root.left)
+          self.preorder_traversal(root.right)
+
+    def postorder_traversal(self,root):
+        if root:
+           self.postorder_traversal(root.left)
+           self.postorder_traversal(root.right)
+           print(root.data, end=" ")
+    def search_in_bst(self,root,key):
+        if(root.data==key):
+            return True
+        if (root is None):
+            return False
+        if(key<root.data):
+           return self.search_in_bst(root.left,key)
+        elif(key>root.data):
+            return self.search_in_bst(root.right,key)
+        else:
+            return True
+            return True
+    def height(self,root):
+        if root is None:
+            return 0
+        else:
+            return max(self.height(root.left),self.height(root.right))+1
+            
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20,root)
+root=bst_tree.insert(10,root) 
+root=bst_tree.insert(900,root)
+print("\ninorder_travesal:")
+bst_tree.inorder_traversal(root)
+print("\npreorder_travesal:")
+bst_tree.preorder_traversal(root)
+print("\npostorder_travesal:")
+bst_tree.postorder_traversal(root)
+print("\n")
+print(bst_tree.search_in_bst(root,10))
+print(bst_tree.height(root))
+
+OUTPUT:
+
+
+inorder_travesal:
+10 20 900 
+preorder_travesal:
+20 10 900 
+postorder_travesal:
+10 900 20 
+
+True
+2
+
+=== Code Execution Successful ===
+SUM OF ROOTS
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+        if root is None:
+            return Node(data)
+        if data<root.data:
+           root.left=self.insert(data,root.left)
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+     if root :
+        self.inorder_traversal(root.left)
+        print(root.data, end=" ")
+        self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+          print(root.data, end=" ")
+          self.preorder_traversal(root.left)
+          self.preorder_traversal(root.right)
+
+    def postorder_traversal(self,root):
+        if root:
+           self.postorder_traversal(root.left)
+           self.postorder_traversal(root.right)
+           print(root.data, end=" ")
+    def search_in_bst(self,root,key):
+        if(root.data==key):
+            return True
+        if (root is None):
+            return False
+        if(key<root.data):
+           return self.search_in_bst(root.left,key)
+        elif(key>root.data):
+            return self.search_in_bst(root.right,key)
+        else:
+            return True
+            return True
+    def height(self,root):
+        if root is None:
+            return 0
+        else:
+            return max(self.height(root.left),self.height(root.right))+1
+    def sum_of_roots(self,root):
+        if root is None:
+            return 0
+        else:
+            return root.data+self.sum_of_roots(root.left)+self.sum_of_roots(root.right)
+            
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20,root)
+root=bst_tree.insert(10,root) 
+root=bst_tree.insert(900,root)
+print("\ninorder_travesal:")
+bst_tree.inorder_traversal(root)
+print("\npreorder_travesal:")
+bst_tree.preorder_traversal(root)
+print("\npostorder_travesal:")
+bst_tree.postorder_traversal(root)
+print("\n")
+print(bst_tree.search_in_bst(root,10))
+print(bst_tree.height(root))
+print(bst_tree.sum_of_roots(root))
+
+
+OUTPUT:
+
+inorder_travesal:
+10 20 900 
+preorder_travesal:
+20 10 900 
+postorder_travesal:
+10 900 20 
+
+True
+2
+930
+
+=== Code Execution Successful ===
+
+
+Search a node in BST
+Difficulty: BasicAccuracy: 68.46%Submissions: 99K+Points: 1Average Time: 15m
+Given a Binary Search Tree and a node value X, find if the node with value X is present in the BST or not.
+
+
+Example 1:
+
+Input:         2
+                \
+                 81 
+               /    \ 
+             42      87 
+              \       \ 
+               66      90 
+              / 
+            45
+X = 87
+Output: 1
+Explanation: As 87 is present in the
+given nodes , so the output will be
+1.
+Example 2:
+
+Input:      6
+             \ 
+              8 
+             / \ 
+            7   9
+X = 11
+Output: 0
+Explanation: As 11 is not present in 
+the given nodes , so the output will
+be 0.
+
+Your Task:
+You don't need to read input or print anything. Complete the function search()which returns true if the node with value x is present in the BSTelse returns false.
+
+
+Expected Time Complexity: O(Height of the BST)
+Expected Auxiliary Space: O(1).
+
+
+Constraints:
+1 <= Number of nodes <= 105
+
+Company Tags
+Linkedin
+Topic Tags
+Related Articles
+If you are facing any issue on this page. Please let us know.
+Output Window
+Compilation Completed
+Input: 
+7
+2 81 87 42 66 90 45
+87
+Your Output:
+1
+Expected Output:
+Python3
+
+
+
+            return 0
+
+
+
+Custom Input
+MINIMUM ELEMENTS IN BST
+
+"""
+class Node:
+    def __init__(self, val):
+        self.right = None
+        self.data = val
+        self.left = None
+"""
+
+class Solution:
+    #Function to find the minimum element in the given BST.
+    def minValue(self, root):
+        ##Your code here
+        while root.left:
+            root=root.left
+            return root.data
+    
+
+
+geeksforgeeks
+Courses
+Tutorials
+Practice
+Jobs
+H
+
+Search...
+
+
+Minimum element in BST
+Difficulty: BasicAccuracy: 70.95%Submissions: 213K+Points: 1Average Time: 15m
+Given the root of a Binary Search Tree. The task is to find the minimum valued element in this given BST.
+
+Examples
+
+Input: root = [5, 4, 6, 3, N, N, 7, 1]
+ex-1
+Output: 1
+Input: root = [10, 5, 20, 2]
+ex-2
+Output: 2
+Input: root = [10, N, 10, N, 11]
+             10
+              \
+               10
+                \
+                 11
+Output: 10
+Constraints:
+0 <= number of nodes <= 105
+0 <= node->data <= 105
+
+Expected Complexities
+Company Tags
+Microsoft
+Topic Tags
+Related Interview Experiences
+Related Articles
+If you are facing any issue on this page. Please let us know.
+Output Window
+Compilation Completed
+Input: 
+root =
+5 4 6 3 N N 7 1
+Your Output:
+4
+Expected Output:
+1
+Output Difference:
+Ask Yogi Bot
+41
+Python3
+
+
+
+
+
+
+
+
+Custom Input
+
+
+
+"""class Node:
+    def __init__(self, val):
+        self.right = None
+        self.data = val
+        self.left = None
+"""
+
+class Solution:
+    #Function to find the minimum element in the given BST.
+    def minValue(self, root):
+        ##Your code here
+        while root.left:
+            root=root.left
+        return root.data
+    
+           
+
+geeksforgeeks
+Courses
+Tutorials
+Practice
+Jobs
+H
+
+Search
+
+
+Minimum element in BST
+Difficulty: BasicAccuracy: 70.95%Submissions: 213K+Points: 1Average Time: 15m
+Given the root of a Binary Search Tree. The task is to find the minimum valued element in this given BST.
+
+Examples
+
+Input: root = [5, 4, 6, 3, N, N, 7, 1]
+ex-1
+Output: 1
+Input: root = [10, 5, 20, 2]
+ex-2
+Output: 2
+Input: root = [10, N, 10, N, 11]
+             10
+              \
+               10
+                \
+                 11
+Output: 10
+Constraints:
+0 <= number of nodes <= 105
+0 <= node->data <= 105
+
+Expected Complexities
+Company Tags
+Microsoft
+Topic Tags
+Related Interview Experiences
+Related Articles
+If you are facing any issue on this page. Please let us know.
+Output Window
+Compilation Completed
+Input: 
+root =
+5 4 6 3 N N 7 1
+Your Output:
+1
+Expected Output:
+1
+Python3
+
+
+
+
+
+
+
+
+Custom Input
+
+
+PRACTICE:
+'''
+You are given an integer array of size N, representing jars of chocolates. Three
+students A, B, and C respectively, will pick chocolates one by one from each chocolate
+jar, till the jar is empty, and then repeat the same with the rest of the jars. Your task
+is to fine and return an integer value representing the total number of chocolates that
+student A will have, after all the chocolates have been picked from all the jars.
+Note: Once a jar is done A will start taking the chocolates from the new jar.
+Input Format :
+input1: An integer array representing the quantity of chocolates in each jar.
+input2: An integer value N representing the number of jars.
+Output Format:
+Return an integer value representing the total number of chocolates that student A
+will have, after all the chocolates are picked.
+Example:
+Input:
+10 20 30
+3
+Output:
+21
+'''
+This paste expires in <1 hour. Public IP access. Share whatever you see with others in seconds with Context.Terms of ServiceReport this
+
+
+def total_chocolates_for_A(chocolates, N):
+    total_A = 0
+    for jar in chocolates:
+        # Count how many times A gets to pick (every 3rd turn starting from 0)
+        total_A += (jar + 2) // 3  # Equivalent to ceil(jar / 3)
+    return total_A
+
+# Example usage:
+chocolates = [10, 20, 30]
+N = 3
+print(total_chocolates_for_A(chocolates, N))  # Output: 21
+
+Output
+21
+
+
+
+
+'''
+Max is having a dog . he want  to find the age of the dog 
+with respect to the age of human.
+he came to know that , the age of the
+dog is mesured with respect to human  has a formula to proceed. 
+example: 1 year of life span of dog is same as
+seveen years of  life span  of human being
+Now , calculate the age of MAX dog.
+'''
+This paste expires in <1 hour. Public IP access. Share whatever you see with others in seconds with Context.Terms of ServiceReport this
+
+
+# Input: dog's age in years
+dog_age = int(input("Enter the age of Max's dog in dog years: "))
+
+# Calculate human age equivalent
+human_age = dog_age * 7
+
+# Output
+print(f"The age of Max's dog in human years is: {human_age}")
+
+
+Enter the age of Max's dog in dog years: 1
+The age of Max's dog in human years is: 7
+
+=== Code Execution Successful ===
+
+
+'''
+Max is planning to take part in a Diwali contest at a Diwali Party that will begin at 8
+PM and will run until midnight (12 AM) i.e., for 4 hours. He also needs to travel to the
+party venue within this time which takes him P minutes. The contest comprises
+of N problems that are arranged in order of difficulty, with problem 1 being the
+simplest and problem N being the most difficult. Max is aware that he will require 5*i
+minutes to solve the ith problem.
+Your task is help Max find and return an integer value, representing the number of
+problems Max can solve and reach the party venue within the given time frame of 4
+hours.
+Note: Max will leave his home at exactly 8 PM to reach the party venue.
+Input Format:
+input1: An integer value N, representing the total number of problems.
+input2: An integer value P, Representing the time to travel in minutes from his home
+to the party venue.
+
+'''
+This paste expires in <1 hour. Public IP access. Share whatever you see with others in seconds with Context.Terms of ServiceReport this
+
+def max_problems_can_solve(N, P):
+    available_time = 240 - P
+    time_spent = 0
+    count = 0
+    
+    for i in range(1, N + 1):
+        time_spent += 5 * i
+        if time_spent <= available_time:
+            count += 1
+        else:
+            break
+    return count
+
+# Example usage:
+N = int(input("Enter number of problems (N): "))
+P = int(input("Enter travel time in minutes (P): "))
+
+print("Max problems Max can solve:", max_problems_can_solve(N, P))
+
+Enter number of problems (N): 10
+Enter travel time in minutes (P): 30
+Max problems Max can solve: 8
+
+=== Code Execution Successful ===
+
+s = input()
+count_hyphen = s.count('-')
+new_str='-'*count_hyphen + s.replace('-',' ')
+print(new_str)
+
+hello-----world
+-----hello     world

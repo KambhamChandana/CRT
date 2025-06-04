@@ -1,0 +1,566 @@
+LINKEDLIST
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None   #starting point of LL
+    def  insert(self,data):
+         new_node = Node(data)
+         if self.head is None: #if the list is empty
+            self.head = new_node #link new node
+         else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next  #moves temp node for traversal
+            temp.next=new_node
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end="->")
+            temp = temp.next
+        print("None")
+ll = LinkedList()
+ll.insert(10)
+ll.insert(20)
+ll.insert(30)
+ll.display()
+Output
+10->20->30->None
+
+=== Code Execution Successful ===
+
+
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None   #starting point of LL
+    def  insert(self,data):
+         new_node = Node(data)
+         if self.head is None: #if the list is empty
+            self.head = new_node #link new node
+         else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next  #moves temp node for traversal
+            temp.next=new_node
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end="->")
+            temp = temp.next
+        print("None")
+    
+    def add_ll(self):
+        temp=self.head
+        sum=0
+        while temp:
+            sum=sum+temp.data
+            temp=temp.next
+        return sum
+ll = LinkedList()
+ll.insert(10)
+ll.insert(20)
+ll.insert(30)
+ll.display()
+print("sum of elements in Linked List is ")
+ans=ll.add_ll()
+print(ans)
+
+OUTPUT:
+sum of elements in Linked List is 
+60
+
+#User function Template for python3
+
+'''
+
+Linked list class
+class Lin#kedList:
+    def __init__(self):
+        self.head=None
+        self.tail=None
+        '''
+class Solution:
+    # Function to count nodes of a linked list.
+    def getCount(self, head):
+        # code here
+        count=0
+        temp=head
+        while temp:
+            count=count+1
+            temp=temp.next
+            return count
+geeksforgeeks
+Courses
+Tutorials
+Practice
+Contests
+H
+
+Search...
+
+
+Count Linked List Nodes
+Difficulty: BasicAccuracy: 85.99%Submissions: 255K+Points: 1Average Time: 15m
+Given a singly linked list. The task is to find the length of the linked list, where length is defined as the number of nodes in the linked list.
+
+Examples :
+
+Input: LinkedList : 1->2->3->4->5
+
+Output: 5
+Explanation: Count of nodes in the linked list is 5, which is its length.
+Input: LinkedList : 2->4->6->7->5->1->0
+ 
+Output: 7
+Explanation: Count of nodes in the linked list is 7. Hence, the output is 7.
+Expected Time Complexity: O(n)
+Expected Auxilliary Space: O(1)
+
+Constraints:
+1 <= number of nodes <= 105
+1 <= node->data <= 103
+
+Topic Tags
+Related Articles
+If you are facing any issue on this page. Please let us know.
+Output Window
+Compilation Completed
+
+
+
+Input: 
+1 2 3 4 5
+Your Output:
+1
+Expected Output:
+5
+Output Difference:
+Ask Yogi Bot
+15
+Python3
+
+
+
+            return count
+
+
+
+Custom Input
+
+INSERT
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None   #starting point of LL
+    def  insert_end(self,data):
+         new_node = Node(data)
+         if self.head is None: #if the list is empty
+            self.head = new_node #link new node
+         else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next  #moves temp node for traversal
+            temp.next=new_node
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end="->")
+            temp = temp.next
+        print("None")
+    
+    def add_ll(self):
+        temp=self.head
+        sum=0
+        while temp:
+            sum=sum+temp.data
+            temp=temp.next
+        return sum
+    
+    def insert_begnning(self,data):
+         new_node=Node(data)
+         new_node.next=self.head
+         self.head=new_node
+        
+ll = LinkedList()
+ll.insert_end(10)
+ll.insert_begnning(88888)
+ll.insert_end(20)
+ll.insert_end(30)
+ll.insert_end(40)
+ll.insert_end(50)
+
+ll.display()
+print("sum of elements in Linked List is ")
+ans=ll.add_ll()
+print(ans)
+
+Output
+88888->10->20->30->40->50->None
+sum of elements in Linked List is 
+89038
+
+
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None   #starting point of LL
+    def  insert_end(self,data):
+         new_node = Node(data)
+         if self.head is None: #if the list is empty
+            self.head = new_node #link new node
+         else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next  #moves temp node for traversal
+            temp.next=new_node
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end="->")
+            temp = temp.next
+        print("None")
+    
+    def add_ll(self):
+        temp=self.head
+        sum=0
+        while temp:
+            sum=sum+temp.data
+            temp=temp.next
+        return sum
+    
+    def insert_beginning(self,data):
+         new_node=Node(data)
+         new_node.next=self.head
+         self.head=new_node
+    def delete_beginning(self,data):
+        self.head=self.head.next
+        
+ll = LinkedList()
+ll.insert_end(10)
+ll.insert_beginning(88888)
+ll.insert_end(20)
+ll.insert_end(30)
+ll.insert_end(40)
+ll.insert_end(50)
+ll.delete_beginning(88888)
+
+ll.display()
+
+output
+10->20->30->40->50->None
+
+=== Code Execution Successful ===
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None   #starting point of LL
+    def  insert_end(self,data):
+         new_node = Node(data)
+         if self.head is None: #if the list is empty
+            self.head = new_node #link new node
+         else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next  #moves temp node for traversal
+            temp.next=new_node
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end="->")
+            temp = temp.next
+        print("None")
+    
+    def add_ll(self):
+        temp=self.head
+        sum=0
+        while temp:
+            sum=sum+temp.data
+            temp=temp.next
+        return sum
+    
+    def insert_beginning(self,data):
+         new_node=Node(data)
+         new_node.next=self.head
+         self.head=new_node
+    def delete_beginning(self,data):
+        self.head=self.head.next
+    def delete_end(self):
+        temp = self.head
+        while temp.next.next:
+            temp = temp.next
+        temp.next = None
+        
+ll = LinkedList()
+ll.insert_end(10)
+ll.insert_beginning(88888)
+ll.insert_end(20)
+ll.insert_end(30)
+ll.insert_end(40)
+ll.insert_end(50)
+ll.delete_beginning(88888)
+
+ll.display()
+
+
+
+ SINGLE:
+class Node:
+    def _init_(self,data):
+        self.data = data
+        self.next = None
+        
+class LinkedList:
+    def _init_(self):
+        self.head = None #starting point of LL
+        
+    def insert_end(self,data):
+        new_node = Node(data)
+        if self.head is None: #if the list is empty
+            self.head = new_node 
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next #mooves temp node for traversal
+            temp.next = new_node
+    
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end="->")
+            temp = temp.next
+        print("None")
+        
+    def add_ll(self):
+        temp=self.head
+        sum=0
+        while temp:
+            sum=sum+temp.data
+            temp=temp.next
+        return sum
+    
+    def insert_begnning(self,data):
+        new_node=Node(data)
+        new_node.next=self.head
+        self.head=new_node
+        
+    def delete_begnning(self,data):
+        self.head=self.head.next
+        
+    def delete_end(self):
+        temp = self.head
+        while temp.next.next:
+            temp = temp.next
+        temp.next = None
+    
+    def insert_position(self,pos,data):
+        if(pos==0):
+            self.insert_begnning(data)
+        else:
+            new_node=Node(data)
+            temp=self.head
+            for _ in range(pos-1):
+                if temp is None:
+                    print("Position out of bounds")
+                    return
+                temp=temp.next
+            new_node.next=temp.next
+            temp.next=new_node
+            
+    def delete(self,value):
+        if self.head.data == value:
+            self.head = self.head.next
+            return
+        temp = self.head
+        while temp.next and temp.next.data != value:
+            temp= temp.next
+        if temp.next is None:
+            print("value is not found")
+            return
+        temp.next = temp.next.next
+    
+
+
+        
+   
+    
+    
+ll = LinkedList()
+ll.insert_begnning(10)
+ll.insert_begnning(20)
+ll.insert_begnning(30)
+ll.insert_end(900)
+ll.insert_end(50)
+ll.delete(20)
+ll.display()
+
+
+SINLE LL
+
+class Node:
+    def _init_(self,prv,next,data):
+        self.prv = None
+        self.next = None
+        self.data = data
+class DoublyLinkedList:
+    def _init_(self):
+        self.head=None
+    def insert_begnning(self,data):
+        new_node=Node(None,None,data)
+        if self.head is None:
+            self.head - new_node
+        else:
+            new_node.next = self.head
+            self.head.prv = new_node
+            self.head = new_node
+    def delete_begnning(self):
+        self.head = self.head.next
+        self.head.prv = None
+    def delete_end(self):
+        if self.head.next is None:
+            self.head = None
+            return
+        temp = self.head
+        while temp.next:
+          temp = temp.next
+        temp.prv.next = None
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end="->")
+            temp = temp.next
+        print("None")
+OUTPUT:
+
+30->20->10->900->None
+
+
+
+"""index is the node which is to be displayed in output
+  Node is defined as
+class Node:
+    def __init__(self, data):
+		self.data = data
+		self.next = None
+# Linked List class contains a Node object
+class LinkedList:
+    def __init__(self):
+        self.head = None
+This is method only submission.
+ You only need to complete below method.
+"""
+class Solution:
+    def GetNth(self, head, index):
+        # Code Here
+        temp = head
+        count = 1
+        while temp:
+            if  count == index:
+                return temp.data
+            temp = temp.next
+            count += 1
+        return -1
+geeksforgeeks
+Courses
+Tutorials
+Practice
+Contests
+H
+
+Search...
+
+
+Node at a given index in linked list
+Difficulty: EasyAccuracy: 65.11%Submissions: 96K+Points: 2
+Given the head of a Singly Linked List and an index, The task is to find the node at the given index(1-based index) of the linked list. If no such index exists then return -1.
+
+Examples :
+
+Input: LinkedList: 1->2->3->4->5->6->7 , index = 3
+
+Output: 3
+Explanation: The Node value at index 3 is 3.
+Input: LinkedList: 19->28->37->46->55 , index = 6
+
+Output: -1
+Explanation: As number of nodes are less than k so there is no node at index 6 , therefore our answer is -1.
+Expected Time Complexity: O(n)
+Expected Auxiliary Space: O(1)
+
+Constraints:
+1 <= number of nodes <= 105
+1 <= node->data , k <= 105
+
+Topic Tags
+Related Articles
+If you are facing any issue on this page. Please let us know.
+Output Window
+Compilation Completed
+Input: 
+1 2 3 4 5 6 7 
+2
+Your Output:
+2
+Expected Output:
+2
+Python3
+
+
+
+class node:
+    def __init__(self):
+        self.data = None
+        self.next = None
+
+
+def deleteNode(head, x):
+    # Code here
+    _loc = 1
+    _head = head
+    if x == 1:
+        _head = head.next
+    while head:
+        if _loc + 1 == x:
+            head.next = head.next.next
+        head = head.next
+        _loc += 1
+    return _head
+ 
+
+Input: 
+head
+1 6 3 9
+k
+2
+Your Output:
+1 3 9
+Expected Output:
+1 3 9
+
+
+
+
+            count += 1
+        return -1
+
+
+
+Custom Input

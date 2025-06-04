@@ -1,0 +1,269 @@
+create table student
+(
+
+    id int,
+    name varchar(150),
+    age int,
+    email varchar(200)
+);
+
+
+
+
+
+
+--insert
+insert into student(id,name,age,email) value(1,"HARI",22,"abc.com");
+
+
+create table student
+(
+
+    id int,
+    name varchar(150),
+    age int,
+    email varchar(200)
+);
+
+--insert
+insert into student(id,name,age,email) value(1,"HARI",22,"abc.com");
+select * from student;
+
+
+Code Download
+Fill your code here
+MySQL (8.0) Verbose
+theme
+instruction
+select * from student;
+
+
+
+Clear
+
+Compile & Run
+Compiler Message
+Compilation successful
+Custom Testcase
+Output
+--------------
+create table student
+(
+
+    id int,
+    name varchar(150),
+    age int,
+    email varchar(200)
+)
+--------------
+
+Query OK, 0 rows affected (0.001 sec)
+
+--------------
+insert into student(id,name,age,email) value(1,"HARI",22,"abc.com")
+--------------
+
+Query OK, 1 row affected (0.000 sec)
+
+--------------
+select * from student
+--------------
+
++------+------+------+---------+
+| id   | name | age  | email   |
++------+------+------+---------+
+|    1 | HARI |   22 | abc.com |
++------+------+------+---------+
+1 row in set (0.000 sec)
+
+Bye
+
+
+
+create table sales
+(
+  sno int,
+  productId int,
+  productname varchar(150),
+  quantity int,
+  category varchar(200)
+ );
+insert into sales(sno,productId,productname,quantity,category) values
+(1,89,"Tv", 1 ,"homeappliances"),
+(2,86,"santoor", 2,"homeappliances"),
+(3,82,"phone", 1,"electronics"),
+(4,81,"laptop", 2,"electronics"),
+(5,23,"dairy", 2,"dairy"),
+(6,21,"radio", 2,"electronics"),
+(7,19,"tv", 2,"electronics"),
+(8,15,"computer", 2,"electronics"),
+(9,30,"broomstick", 2,"homeappliances"),
+(10,50,"washing machine", 2,"homeappliances");
+select SUM(Quantity) as total_sales
+from sales;
+
+Code Download
+Fill your code here
+MySQL (8.0) Verbose
+theme
+instruction
+
+
+
+
+Clear
+
+Compile & Run
+Compiler Message
+Compilation successful
+Custom Testcase
+Output
+--------------
+create table sales
+(
+  sno int,
+  productId int,
+  productname varchar(150),
+  quantity int,
+  category varchar(200)
+ )
+--------------
+
+Query OK, 0 rows affected (0.001 sec)
+
+--------------
+insert into sales(sno,productId,productname,quantity,category) values
+(1,89,"Tv", 1 ,"homeappliances"),
+(2,86,"santoor", 2,"homeappliances"),
+(3,82,"phone", 1,"electronics"),
+(4,81,"laptop", 2,"electronics"),
+(5,23,"dairy", 2,"dairy"),
+(6,21,"radio", 2,"electronics"),
+(7,19,"tv", 2,"electronics"),
+(8,15,"computer", 2,"electronics"),
+(9,30,"broomstick", 2,"homeappliances"),
+(10,50,"washing machine", 2,"homeappliances")
+--------------
+
+Query OK, 10 rows affected (0.001 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+--------------
+select SUM(Quantity) as total_sales
+from sales
+--------------
+
++-------------+
+| total_sales |
++-------------+
+|          18 |
++-------------+
+1 row in set (0.000 sec)
+
+Bye
+
+
+
+
+
+gfg
+
+Query all columns for all American cities in the CITY table with populations larger than 100000. The CountryCode for America is USA.
+
+The CITY table is described as follows:
+
+CITY.jpg
+
+
+select *
+from CITY
+where population >100000 AND countrycode="USA";
+
+
+
+
+q:Query the NAME field for all American cities in the CITY table with populations larger than 120000. The CountryCode for America is USA.
+
+The CITY table is described as follows:
+CITY.jpg
+
+
+aans;
+select NAME
+from CITY
+where population >120000 AND countrycode="USA"
+
+
+
+Query all columns (attributes) for every row in the CITY table.
+
+ans:select *
+from CITY
+
+Q:Query all columns for a city in CITY with the ID 1661.
+
+ans:select *
+from CITY
+where ID=1661
+
+Q:Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE for Japan is JPN.
+
+ans:
+select *
+from city
+where countrycode="jpn"
+
+Q:Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
+ans:select name
+from city
+where countrycode="jpn"
+
+Q:Query a list of CITY and STATE from the STATION table.
+
+ans:/*
+Enter your query here.
+*/
+select city,state
+from station;
+
+Q:
+Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer.
+The STATION table is described as follows:
+
+Station.jpg
+
+ans:
+/*
+Enter your query here.
+*/
+select DISTINCT city
+from station
+where ID%2=0;
+
+
+q;
+Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table.
+
+ans;
+/*
+Enter your query here.
+*/
+select count(city)-count(distinct city)
+from station
+
+output:13
+
+
+
+
+
+Query a count of the number of cities in CITY having a Population larger than 100000 
+
+
+ans
+select count(id)
+from city
+where population>100000;
+
+output:1
+
